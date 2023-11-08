@@ -17,7 +17,7 @@
         <div class="container header-container">
             <nav class="navigation">
                 <a class="link nav-logo" href="/">Web<span class="nav-span">Studio</span></a>
-                <ul class="list menu">
+                <ul class="list menu-navi">
                     <li><a class="link pages current" href="./index.html">Studio</a></li>
                     <li><a class="link pages" href="./portfolio.html">Portfolio</a></li>
                     <li><a class="link pages" href="">Contacts</a></li>
@@ -31,12 +31,26 @@
                 </ul>
             </address>
         </div>
+        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="22" viewBox="0 0 32 22" fill="none">
+                <g clip-path="url(#clip0_297053_2156)">
+                    <path d="M1.34766 20.0431H30.8861M1.34766 10.7354H30.8861M1.34766 1.42773H30.8861" stroke="#2E2F42"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_297053_2156">
+                        <rect width="32" height="22" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+            </button>
+        </div>
     </header>
     <main>
         <section class="section top-html">
            <div class="container container-top-html">
             
-                <h1 class="top-heading">Effective Solutions for Your Business</h1>
+                <h1 class="top-heading">Effective Solutions For Your Business</h1>
                 <button data-modal-open class="interactive order-button" type="button">Order Service</button>
                 
             </div>
@@ -118,7 +132,7 @@
                 <h2 class="third-heading">Our Team</h2>
                     <ul class="list third-html-list">
                         <li class="images-list">
-                            <img src="./images/mark.jpg" width="264" height="260" alt="Man with black beard in bleu shirt">
+                            <img src="./images/mark.jpg" srcset="./images/mark.jpg, .images/mark2x.jpx" width="264" height="260" alt="Man with black beard in bleu shirt">
                             <div class="employees">
                                 <h3 class="third-header">Mark Guerrero</h3> 
                                 <p class="paragraph-employee">Product Designer</p>
@@ -159,7 +173,7 @@
                             </div>
                         </li>
                         <li class="images-list">
-                            <img src="./images/tom.jpg" width="264" height="260" alt="A man with brown hair in blue shirt">
+                            <img src="./images/tom.jpg" srcset="./images/tom.jpg, ./images/tom2x.jpg" width="264" height="260" alt="A man with brown hair in blue shirt">
                             <div class="employees">
                                 <h3 class="third-header">Tom Ford</h3> 
                                 <p class="paragraph-employee">Frontend Developer</p>
@@ -200,7 +214,7 @@
                             </div>
                         </li>
                         <li class="images-list">
-                            <img src="./images/camila.jpg" width="264" height="260" alt="A woman with dark hair in pink jumper">
+                            <img src="./images/camila.jpg" srcset="./images/camila.jpg, .images/camila2x.jpg" width="264" height="260" alt="A woman with dark hair in pink jumper">
                             <div class="employees">
                                 <h3 class="third-header">Camila Garcia</h3> 
                                 <p class="paragraph-employee">Marketing</p>
@@ -241,7 +255,7 @@
                             </div>
                         </li>
                         <li class="images-list">
-                            <img src="./images/daniel.jpg" width="264" height="260" alt="A man with dark hair and short beard">
+                            <img src="./images/daniel.jpg" srcset="./images/daniel.jpg, ./images/daniel2x.jpg" width="264" height="260" alt="A man with dark hair and short beard">
                             <div class="employees">
                                 <h3 class="third-header">Daniel Wilson</h3> 
                                 <p class="paragraph-employee">UI Designer</p>
@@ -463,7 +477,7 @@
     <!---mobile-menu-->
     
     <div class="menu-container js-menu-container is-hidden" id="mobile-menu">
-        <button class="menu-toggle js-close-menu">
+        <button class=" js-close-menu">
             <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                 <path fill-rule="evenodd"
                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -480,8 +494,11 @@
     </div>
     
     
-
+    
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+        integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+        crossorigin="anonymous"></script>
+    <script defer src="js/mobile-menu.js"></script>
 <script src="./js/modal.js"></script>
-<script src="./js/mobile-menu.js"></script>
 </body>
 </html>

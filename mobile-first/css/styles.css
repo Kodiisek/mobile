@@ -22,12 +22,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 
 /* ================================================= MOBILE 👇 ========================================= */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
     
 
     .container {
-        width: 428px;
+        max-width: 428px;
         margin: 0 auto;
         padding-left: 15px;
         padding-right: 15px;
@@ -99,12 +99,22 @@ h1, h2, h3, h4, h5, h6, p, ul {
     }
 
     .header {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-bottom: 1px solid #e7e9fc;
         box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
             0px 1px 1px rgba(46, 47, 66, 0.16),
             0px 1px 6px rgba(46, 47, 66, 0.08);
     }
+
+    .hamburger-button{
+        border: none;
+        background: transparent;
+        width: 32px;
+        height: 22px;
+        cursor: pointer;
+     }
 
     .address {
         font-style: normal;
@@ -152,11 +162,11 @@ h1, h2, h3, h4, h5, h6, p, ul {
         text-transform: uppercase;
     }
 
-    .menu {
+    .menu-navi {
         display: flex;
         gap: 40px;
     }
-     .menu{
+     .menu-navi{
         display: none;
     }
     .address{
@@ -240,9 +250,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
         font-family: Roboto, sans-serif;
         font-size: 36px;
         font-weight: 700;
-        line-height: 107.143%;
-        letter-spacing: 1.12px;
-        max-width: 496px;
+        line-height: 111.111%;
+        letter-spacing: 0.72px;
+        width: 390px;
+        text-transform: capitalize;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
@@ -295,7 +306,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
     }
 
     .first-html-list {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 24px;
     }
 
@@ -1145,15 +1159,18 @@ h1, h2, h3, h4, h5, h6, p, ul {
     }
 
     .footer-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 24px;
+            display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                gap: 24px;
     }
 
     .footer-label {
-        display: block;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .footer-input {
@@ -1196,13 +1213,82 @@ h1, h2, h3, h4, h5, h6, p, ul {
         margin-left: 16px;
         fill: #FFFFFF;
     }
+
+          
+    
+          .menu-toggle {
+              min-height: 40px;
+              min-width: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+    
+              margin: 0;
+              padding: 0;
+              background-color: transparent;
+              cursor: pointer;
+              border: none;
+              border-radius: 50%;
+              outline: none;
+          }
+
+
+
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 32px;
+    background-color: #3f51b5;
+    z-index: 999;
+
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+    transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #fff;
+}
+
+.mobile-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.mobile-menu .link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
 }
 
 /* ================================================= TABLET 👇 ========================================= */
 @media screen and (min-width: 768px) and (max-width: 1157px) {
 
+    .menu-toggle{
+        display: none;
+    }
+
     .container {
-            width: 768px;
+            max-width: 768px;
             margin: 0 auto;
             padding-left: 15px;
             padding-right: 15px;
@@ -1247,12 +1333,13 @@ h1, h2, h3, h4, h5, h6, p, ul {
     
         .section {}
     
-    
+        .hamburger-button{
+            display: none;
+        }
     
         .header-container {
             display: flex;
-            justify-content: center;
-            width: 1158px;
+            width: 768px;
             margin: 0 auto;
             padding: 0 15px;
             text-align: center;
@@ -1261,7 +1348,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     
         .navigation {
             display: flex;
-            align-items: center;
+            align-items: flex-end
         }
     
         .link:hover {
@@ -1283,13 +1370,15 @@ h1, h2, h3, h4, h5, h6, p, ul {
         .address {
             font-style: normal;
             display: flex;
-            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            gap: 0px;
             
         }
     
         .addresslist {
             display: grid;
-            gap: 40px;
+            gap: 12px;
         }
     
         .nav-logo {
@@ -1327,7 +1416,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
             text-transform: uppercase;
         }
     
-        .menu {
+        .menu-navi {
             display: flex;
             gap: 40px;
             margin-right: 121px;
@@ -1358,7 +1447,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         .contacts {
             color: var(--SLATE, #434455);
             font-family: Roboto, sans-serif;
-            font-size: 16px;
+            font-size: 12px;
             font-style: normal;
             line-height: 150%;
             letter-spacing: 0.32px;
@@ -1388,7 +1477,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
             background-repeat: no-repeat;
             background-size: cover;
             margin: 0 auto;
-            max-width: 1440px;
+            max-width: 1158px;
             padding: 188px 0;
         }
     
@@ -1476,7 +1565,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
             display: flex;
             justify-content: center;
             flex-basis: calc((100% - 3*24px)/4);
-            max-width: 264px;
+            max-width: 368px;
             margin-bottom: 72px;
         }
     
@@ -1484,7 +1573,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     
         .first-html-div {
             display: flex;
-
+            width: 368px;
             align-items: center;
             justify-content: center;
             height: 112px;
@@ -1495,11 +1584,17 @@ h1, h2, h3, h4, h5, h6, p, ul {
         }
 
                 .fhtml-container {
+                    width: 368px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    align-items: center;
+                    align-items: flex-start;
+                    
                 }
+        .text-fhtml{
+            align-items: flex-start;
+            text-align: left;
+        }
     
         .third-html {
             background-color: var(--CLOUD, #F4F4FD);
@@ -1510,6 +1605,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
         .third-html-div {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     
         .third-heading {
@@ -1526,6 +1623,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         }
     
         .third-html-list {
+            width: 267px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             
@@ -1576,7 +1674,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         }
     
         .fourth-html-div {
-            display: block;
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
@@ -1594,13 +1692,15 @@ h1, h2, h3, h4, h5, h6, p, ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            width: 100%;
+            
         }
     
         .fourth-html-point {
-            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 0px;
             height: 88px;
-            margin-bottom: 72px;
+            margin-bottom: 48px;
     
         }
     
@@ -1608,7 +1708,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         .fourth-html-point:focus {}
     
         .fourth-html-link {
-            width: 100%;
+            width: 168px;
             height: 100%;
             border: 1px solid #8e8f99;
             border-radius: 4px;
@@ -1639,6 +1739,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         }
     
         .images-list {
+            width: 267px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1758,7 +1859,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         .second-header {
             color: var(--NAVY-BLUE, #2E2F42);
             font-family: Roboto, sans-serif;
-            font-size: 20px;
+            font-size: 36px;
             font-weight: 500;
             line-height: 120%;
             letter-spacing: 0.4px;
@@ -1796,7 +1897,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     
         .paragraph {
             font-size: 16px;
-            text-align: center;
+            text-align: left;
         }
     
         .paragraph-employee {
@@ -1850,10 +1951,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
         }
     
         .footer-container-basic {
-            display: block;
+            display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
             align-items: center;
-    
+            padding-right: 108px;
     
         }
     
@@ -2327,7 +2430,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     
         .footer-form {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 24px;
@@ -2339,7 +2441,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     
         .footer-input {
             gap: 24px;
-            width: 398px;
+            width: 264px;
             height: 40px;
             border: 1px solid #ffffff;
             background-color: transparent;
@@ -2391,17 +2493,13 @@ h1, h2, h3, h4, h5, h6, p, ul {
     }
 
    
-    .hamburger-button{
+    .hamburger-div{
         
-            position: absolute;
-                right: 16px;
-                top: 24px;
-                padding: 0;
-                background-color: #E7E9FC;
+           
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                
+                align-content: center;
     }
     .hamburger{
         width: 32px;
@@ -2413,6 +2511,11 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /* ================================================= DESKTOP 👇 ========================================= */
 @media screen and (min-width: 1158px) {
+    
+    .menu-toggle {
+            display: none;
+        }
+    
     .visually-hidden {
             position: absolute;
             width: 1px;
@@ -2539,7 +2642,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
             text-transform: uppercase;
         }
     
-        .menu {
+        .menu-navi {
             display: flex;
             gap: 40px;
             
